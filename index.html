@@ -5,8 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extension</title>
+    
 </head>
 <body>
     <h1>Hello World!</h1>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+  
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+
+    <script>
+        // TODO: Replace the following with your app's Firebase project configuration
+        // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+        var firebaseConfig = {
+            apiKey: "AIzaSyB08jVq4ZB5RvsAydMRa-fcYNi7lNADWIA",
+            authDomain: "spring21-sps-49.firebaseapp.com",
+            projectId: "spring21-sps-49",
+            storageBucket: "spring21-sps-49.appspot.com",
+            messagingSenderId: "241172127639",
+            appId: "1:241172127639:web:ace1a08d13118308f1aed2",
+            measurementId: "G-9JLWCZW64R"
+        };
+    
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
 </body>
+
+
+  
+
 </html>
