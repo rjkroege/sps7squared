@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extension</title>
-    <script src="main.js"></script>
+    <script src="/main.js"></script>
+    <script type='text/javascript' src="/config.js"></script>
 </head>
 <body>
     <h1>Hello World!</h1>
@@ -28,15 +29,14 @@
         // TODO: Replace the following with your app's Firebase project configuration
         // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
         var firebaseConfig = {
-            apiKey: "AIzaSyB08jVq4ZB5RvsAydMRa-fcYNi7lNADWIA",
-            authDomain: "spring21-sps-49.firebaseapp.com",
-            projectId: "spring21-sps-49",
-            storageBucket: "spring21-sps-49.appspot.com",
-            messagingSenderId: "241172127639",
-            appId: "1:241172127639:web:ace1a08d13118308f1aed2",
-            measurementId: "G-9JLWCZW64R"
+            apiKey: config().apiKey,
+            authDomain: config().authDomain,
+            projectId: config().projectId,
+            storageBucket: config().storageBucket,
+            messagingSenderId: config().messagingSenderId,
+            appId: config().appId,
+            measurementId: config().measurementId
         };
-    
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
       </script>
