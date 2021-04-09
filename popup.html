@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extension</title>
+    <link rel="stylesheet" href="css/popup.css">
+</head>
+
+<body>
+    <!-- Section dedicated to button functionality. Highlights selected group. -->
+    <section>
+
+        <div class="group-name">
+            CS Group <i class='bi bi-chevron-down'></i>
+        </div>
+
+        <!-- Options include: adding a note and canceling a note. -->
+        <div class="options">
+            <i id="add" class="option-item bi bi-plus-circle"></i>
+
+            <!-- Class bi-circle represents the user's google sign in profile picture. -->
+            <i class="option-item bi bi-circle"></i>
+        </div>
+
+    </section>
+
+    <!-- Form for creating a new note. -->
+    <form id="noteForm">
+        <textarea name="text" id="text" cols="28" rows="7" placeholder="What's on your mind?" style="overflow:auto; resize:none" ></textarea>
+
+        <!-- Submit function handled in popup.js. -->
+        <i id="submit" class="submit bi bi-pin-angle"></i>
+    </form>
+
+    <div class="note-options">
+        <div class="note-opt-name selected">All Notes</div>
+    </div>
+
+    <!-- Created notes are inserted into this container. -->
+    <div class="notes-container"></div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
