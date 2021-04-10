@@ -29,7 +29,8 @@
 
     <!-- Form for creating a new note. -->
     <form id="noteForm">
-        <textarea name="text" id="text" cols="28" rows="7" placeholder="What's on your mind?" style="overflow:auto; resize:none" ></textarea>
+        <textarea name="text" id="text" cols="28" rows="7" placeholder="What's on your mind?"
+            style="overflow:auto; resize:none"></textarea>
 
         <!-- Submit function handled in popup.js. -->
         <i id="submit" class="submit bi bi-pin-angle"></i>
@@ -39,8 +40,23 @@
         <div class="note-opt-name selected">All Notes</div>
     </div>
 
-    <!-- Created notes are inserted into this container. -->
-    <div class="notes-container"></div>
+    <!-- Created notes are inserted into this container in a template. -->
+    <div class="notes-container">
+        <!-- Template for each note card to be cloned in popup.js. -->
+        <template id="note">
+            <div class="note">
+                <div class='text'>
+                    <!-- Text from the form submission is inserted here in popup.js. -->
+                </div>
+
+                <div class='edits-container'>
+                    <i id='edit' class='bi bi-pencil'></i>
+                    <i id='delete' class='bi bi-trash'></i>
+                </div>
+            </div>
+        </template>
+        <!-- End of template. -->
+    </div>
 
     <script src="popup.js"></script>
 </body>

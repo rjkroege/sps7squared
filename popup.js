@@ -42,26 +42,23 @@ window.onload = function () {
             text: document.getElementById("text").value,
         };
         global.text = note.text;
-        
+
         global.noteForm.reset();
         global.noteForm.classList.remove("show");
 
-        var newNote = document.createElement("div");
-        newNote.setAttribute("class", "note");
+        //Adds in the text content that is in the note. CSS takes these elements into 
+        //account. Text variable holds the text from the above function that copies an
+        //instance of a note from the HTML template.
+        
+        var temp = document.querySelector("#note");
+        var clone = temp.content.cloneNode(true);
+        var div = clone.querySelector(".text");
+        div.textContent = global.text;
 
-        //Adds in the inner html that is basically the note. CSS takes these elements into 
-        //account. Text variable holds the text from the above function that creates an
-        //instance of a note.
-
-        newNote.innerHTML =
-            "<div class='text'>" +
-            global.text +
-            "</div><div class='edits-container'><i id='edit' class='bi bi-pencil'></i><i id='delete' class='bi bi-trash'></i></div>";
-
-        //Appends child (newNote) to the top.
+        //Appends child (clone of note template) to the top.
 
         var container = document.getElementsByClassName("notes-container");
-        container[0].prepend(newNote);
+        container[0].prepend(clone);
 
         //Takes care of consistency in the plus vs x button for creating/cancelling a note.
 
