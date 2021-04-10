@@ -34,7 +34,7 @@ window.onload = function () {
 
     global.submitNote.onclick = function addNote(ev) {
 
-        //Stop the form submitting.
+        // Stop the form submitting.
 
         ev.preventDefault();
 
@@ -46,21 +46,21 @@ window.onload = function () {
         global.noteForm.reset();
         global.noteForm.classList.remove("show");
 
-        //Adds in the text content that is in the note. CSS takes these elements into 
-        //account. Text variable holds the text from the above function that copies an
-        //instance of a note from the HTML template.
+        // Adds in the text content that is in the note. CSS takes these elements into 
+        // account. Text variable holds the text from the above function that copies an
+        // instance of a note from the HTML template.
         
         var temp = document.querySelector("#note");
         var clone = temp.content.cloneNode(true);
         var div = clone.querySelector(".text");
         div.textContent = global.text;
 
-        //Appends child (clone of note template) to the top.
+        // Appends child (clone of note template) to the top.
 
         var container = document.getElementsByClassName("notes-container");
         container[0].prepend(clone);
 
-        //Takes care of consistency in the plus vs x button for creating/cancelling a note.
+        // Takes care of consistency in the plus vs x button for creating/cancelling a note.
 
         if (global.plusNote.classList.contains("bi-x-circle")) {
             global.plusNote.classList.remove("bi-x-circle");
