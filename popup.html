@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extension</title>
+    <link rel="stylesheet" href="css/popup.css">
+    <script type='text/javascript' src="config.js"></script>
+    <script src="popup.js"></script>
+</head>
+
+<body>
+    <!-- SIGN IN WITH GOOGLE -->
+
+    <input id="loginButton" type="button" value="Login with Google"/>
+    <input id="logoutButton" type="button" value="Logout"/>
+
+    <!-- Firebase with CDN-->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+  
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+
+    <script>
+        // TODO: Replace the following with your app's Firebase project configuration
+        // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+        var firebaseConfig = {
+            apiKey: config().apiKey,
+            authDomain: config().authDomain,
+            projectId: config().projectId,
+            storageBucket: config().storageBucket,
+            messagingSenderId: config().messagingSenderId,
+            appId: config().appId,
+            measurementId: config().measurementId
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+
+    <!-- AFTER SIGN IN -->
+
+    <!-- Section dedicated to button functionality. Highlights selected group. -->
+    <section>
+
+        <div class="group-name">
+            CS Group <i class='bi bi-chevron-down'></i>
+        </div>
+
+        <!-- Options include: adding a note and canceling a note. -->
+        <div class="options">
+            <i id="add" class="option-item bi bi-plus-circle"></i>
+
+            <!-- Class bi-circle represents the user's google sign in profile picture. -->
+            <i class="option-item bi bi-circle"></i>
+        </div>
+
+    </section>
+
+    <!-- Form for creating a new note. -->
+    <form id="noteForm">
+        <textarea name="text" id="text" cols="28" rows="7" placeholder="What's on your mind?"
+            style="overflow:auto; resize:none"></textarea>
+
+        <!-- Submit function handled in popup.js. -->
+        <i id="submit" class="submit bi bi-pin-angle"></i>
+    </form>
+
+    <div class="note-options">
+        <div class="note-opt-name selected">All Notes</div>
+    </div>
+
+    <!-- Created notes are inserted into this container in a template. -->
+    <div class="notes-container">
+        <!-- Template for each note card to be cloned in popup.js. -->
+        <template id="note">
+            <div class="note">
+                <div class='text'>
+                    <!-- Text from the form submission is inserted here in popup.js. -->
+                </div>
+
+                <div class='edits-container'>
+                    <i id='edit' class='bi bi-pencil'></i>
+                    <i id='delete' class='bi bi-trash'></i>
+                </div>
+            </div>
+        </template>
+        <!-- End of template. -->
+    </div>
+    <!-- End of container -->
+
+</body>
+
+</html>
