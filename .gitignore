@@ -1,2 +1,3 @@
 #Ignore file containing project keys
 config.js
+.DS_Store
