@@ -5,6 +5,11 @@ function initializeFirebaseUI() {
   const uiConfig = {
     callbacks: {
       signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+        chrome.runtime.sendMessage({ message: "sign_in" }, function (response) {
+          if (response.message === "success") {
+            window.location.replace("popup.html");
+          }
+        });
         return false;
       },
       uiShown: function () {
