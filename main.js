@@ -17,11 +17,14 @@ function login() {
           // The signed-in user info.
           var user = result.user;
           // ...
-          chrome.runtime.sendMessage({ message: "sign_in" }, function (response) {
-            if (response.message === "success") {
-              window.location.replace("popup.html");
+          chrome.runtime.sendMessage(
+            { message: "sign_in" },
+            function (response) {
+              if (response.message === "success") {
+                window.location.replace("popup.html");
+              }
             }
-          });
+          );
         })
         .catch((error) => {
           // Handle Errors here.

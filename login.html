@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <script type='text/javascript' src="/config.js"></script>
     <script src="./login-init.js"></script>
 </head>
+
 <body>
     <h1>Login Now</h1>
 
@@ -21,10 +23,10 @@
     <!-- Firebase with CDN-->
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-  
+
     <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
-  
+
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
@@ -44,13 +46,14 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-      </script>
-      <script src="./login-script.js"></script>
-      <script>
+    </script>
+    <script src="./login-script.js"></script>
+    <script>
         function start() {
             logout();
         }
         window.onload = start;
-      </script>
+    </script>
 </body>
+
 </html>
