@@ -9,6 +9,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   } else if (request.message === "sign_out") {
     user_signed_in = false;
     sendResponse({ message: "success" });
+  } else if (request.message === "sign_in") {
+    user_signed_in = true;
+    sendResponse({ message: "success" });
   }
 
   return true;
