@@ -70,7 +70,6 @@ window.onload = function () {
                       window.location.replace("login.html");
                     }
                   });
-                //alert("Sign-out successful");
             })
             .catch((error) => {
                 // An error happened.

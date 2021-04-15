@@ -1,4 +1,4 @@
-//Function used to initialize Firebase UI components (login with google)
+// Function used to initialize Firebase UI components (login with google)
 function initializeFirebaseUI() {
   // Initialize the FirebaseUI Widget using Firebase.
   const ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -6,10 +6,11 @@ function initializeFirebaseUI() {
   const uiConfig = {
     callbacks: {
       signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-        //succesfull login
-        chrome.runtime.sendMessage({ message: "sign_in" }, function (response) { //make call to backend script
+        // Succesfull login
+        // Make call to backend script
+        chrome.runtime.sendMessage({ message: "sign_in" }, function (response) {
           if (response.message === "success") {
-            window.location.replace("popup.html"); //Show main page to the user
+            window.location.replace("popup.html"); // Show main page to the user
           }
         });
         return false;
@@ -23,7 +24,7 @@ function initializeFirebaseUI() {
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: "popup",
     signInOptions: [
-      //Google login provider information
+      // Google login provider information
       {
         provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
         customParameters: {
