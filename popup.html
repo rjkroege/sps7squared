@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extension</title>
+    <script src="main.js"></script>
     <link rel="stylesheet" href="css/popup.css">
     <script type='text/javascript' src="config.js"></script>
     <script src="popup.js"></script>
@@ -29,19 +30,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 
     <script>
-        // TODO: Replace the following with your app's Firebase project configuration
-        // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
-        var firebaseConfig = {
-            apiKey: config().apiKey,
-            authDomain: config().authDomain,
-            projectId: config().projectId,
-            storageBucket: config().storageBucket,
-            messagingSenderId: config().messagingSenderId,
-            appId: config().appId,
-            measurementId: config().measurementId
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(makeFirebaseConfig());
     </script>
 
 

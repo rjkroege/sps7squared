@@ -34,18 +34,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
     <script>
-        // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
-        var firebaseConfig = {
-            apiKey: config().apiKey,
-            authDomain: config().authDomain,
-            projectId: config().projectId,
-            storageBucket: config().storageBucket,
-            messagingSenderId: config().messagingSenderId,
-            appId: config().appId,
-            measurementId: config().measurementId
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(makeFirebaseConfig());
     </script>
     <script src="login-script.js"></script>
     <script>
