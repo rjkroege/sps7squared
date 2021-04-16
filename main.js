@@ -17,6 +17,14 @@ function login() {
           // The signed-in user info.
           var user = result.user;
           // ...
+          chrome.runtime.sendMessage(
+            { message: "sign_in" },
+            function (response) {
+              if (response.message === "success") {
+                window.location.replace("popup.html");
+              }
+            }
+          );
         })
         .catch((error) => {
           // Handle Errors here.
@@ -44,10 +52,21 @@ function logout() {
     .signOut()
     .then(() => {
       // Sign-out successful.
-      alert("Sign-out successful");
     })
     .catch((error) => {
       // An error happened.
       console.log(error);
     });
+}
+
+function makeFirebaseConfig() {
+  return {
+    apiKey: config().apiKey,
+    authDomain: config().authDomain,
+    projectId: config().projectId,
+    storageBucket: config().storageBucket,
+    messagingSenderId: config().messagingSenderId,
+    appId: config().appId,
+    measurementId: config().measurementId,
+  };
 }
