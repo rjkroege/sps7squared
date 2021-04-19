@@ -1,0 +1,65 @@
+/* Import Bootstrap icons, version 1.3, for use in the extension. */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+/* Import font for title page. */
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+body {
+    max-height: 600px;
+    width: 250px;
+}
+
+.welcome{
+    position: relative;
+    height: 100px;
+    width: 250px;
+}
+
+.bi-book-half{
+    color: #1C72E8;
+    font-size: 30px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title{
+    font-family: 'Rock Salt', cursive;
+    font-size: 30px;
+    color: #1C72E8;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-btn {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    border: 0.5px solid rgb(196, 196, 196);
+    box-shadow: 1px 1px 1px #a3a3a3;
+    white-space: nowrap;
+}
+
+.login-btn input {
+    font-family: roboto, 'Noto Sans Myanmar UI', arial, sans-serif;
+    border: none;
+    background-color: transparent;
+    color: #7f7f7f;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Gets rid of default blue outline for input on click action. */
+.login-btn input:focus {
+    outline: none;
+}
+
+.login-btn:hover, .login-btn input:hover {
+    cursor: pointer;
+}

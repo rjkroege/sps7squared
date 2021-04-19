@@ -43,7 +43,7 @@ function login() {
 }
 
 function app(user) {
-  alert("Hello, " + user.displayName);
+  //alert("Hello, " + user.displayName);
 }
 
 function logout() {
