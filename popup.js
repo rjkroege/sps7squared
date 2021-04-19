@@ -133,4 +133,6 @@ window.onload = function () {
             global.plusNote.classList.add("bi-plus-circle");
         }
     };
+    // Get users profile image URL
+    getProfileURL();
 };
