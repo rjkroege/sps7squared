@@ -4,7 +4,7 @@ function init() {
     { message: "is_user_signed_in" },
     function (response) {
       if (response.message === "success" && response.payload) {
-        window.location.replace("./popup.html");
+        window.location.replace("popup.html");
       }
     }
   );

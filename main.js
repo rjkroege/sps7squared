@@ -1,9 +1,5 @@
 function login() {
   function newLoginHappened(user) {
-    if (user) {
-      //User is signed in
-      app(user);
-    } else {
       var provider = new firebase.auth.GoogleAuthProvider();
       firebase
         .auth()
@@ -36,14 +32,9 @@ function login() {
           var credential = error.credential;
           // ...
         });
-    }
   }
 
   firebase.auth().onAuthStateChanged(newLoginHappened);
-}
-
-function app(user) {
-  alert("Hello, " + user.displayName);
 }
 
 function logout() {
