@@ -75,6 +75,26 @@ function getProfileURL() {
   });
 }
 
+// Create a new note and render it
+function renderNote(doc){
+  // Values retrieved from DB
+  let id = doc.id;
+  let noteText = doc.data().text;
+
+  // Create new note 
+  var container = document.getElementsByClassName("notes-container");
+  var temp = document.querySelector("#note");
+  var clone = temp.content.cloneNode(true);
+  var div = clone.querySelector(".text");
+
+  // Modify new note values
+  div.textContent = noteText;
+  temp.setAttribute('data-id', id);
+
+  // Add new note to notes container
+  container[0].prepend(clone);
+}
+
 // Get firebase data based on URL
 function getDataFromDB(URL){
   db.collection('notes').where("URL", "==", URL)
