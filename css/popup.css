@@ -49,6 +49,14 @@ section {
     font-size: 20px;
 }
 
+/* user image */
+#profile-image{
+    height: 22px;
+    width: 22px;
+    border-radius: 50px;
+    transform: translate(50%, 45%);
+}
+
 /* Default sizing for all bootstrap icons. */
 .bi {
     font-size: 20px;
