@@ -97,7 +97,8 @@ function renderNote(doc){
 
 // Get firebase data based on URL
 function getDataFromDB(URL){
-  db.collection('notes').where("URL", "==", URL)
+  db.collection('notes')
+  .where("URL", "==", URL)
   .get().then((snapshot) => {
       snapshot.docs.forEach(doc => {
           renderNote(doc);
