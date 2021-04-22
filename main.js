@@ -89,7 +89,7 @@ function renderNote(doc){
 
   // Modify new note values
   div.textContent = noteText;
-  temp.setAttribute('data-id', id);
+  div.parentElement.setAttribute('data-id', id);
 
   // Add new note to notes container
   container[0].prepend(clone);
@@ -140,5 +140,7 @@ function deleteNote(el){
   var element = el;
   var container = element.parentElement;
   var note = container.parentElement;
+  let id = note.getAttribute('data-id');
+  db.collection('notes').doc(id).delete();
   note.remove();
 }
