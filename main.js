@@ -93,6 +93,7 @@ function renderNote(doc){
 
   // Add new note to notes container
   container[0].prepend(clone);
+  document.body.appendChild(clone);
 }
 
 // Get firebase data based on URL.
@@ -133,3 +134,11 @@ function saveDataToDB(noteText){
     });
 });
 } 
+
+// Delete note visually - add database deletion
+function deleteNote(el){
+  var element = el;
+  var container = element.parentElement;
+  var note = container.parentElement;
+  note.remove();
+}
