@@ -75,7 +75,7 @@ function getProfileURL() {
   });
 }
 
-// Create a new note and render it
+// Create a new note and render it.
 function renderNote(doc){
   // Values retrieved from DB
   let id = doc.id;
@@ -95,7 +95,7 @@ function renderNote(doc){
   container[0].prepend(clone);
 }
 
-// Get firebase data based on URL
+// Get firebase data based on URL.
 function getDataFromDB(URL){
   db.collection('notes')
   .where("URL", "==", URL)
@@ -106,7 +106,7 @@ function getDataFromDB(URL){
   })
 }
 
-// Display data from current page
+// Display data from current page.
 function displayCurrentURLData() {
   chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
     let url = tabs[0].url; // This is user's current page URL
@@ -115,3 +115,21 @@ function displayCurrentURLData() {
     getDataFromDB(url); 
 });
 }
+
+// Push a note to the database.
+function saveDataToDB(noteText){
+  chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+    let url = tabs[0].url;
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // Push data to DB
+        db.collection('notes').add({
+          URL: url,
+          author: user.displayName,
+          text: noteText
+        });
+      } 
+    });
+});
+} 

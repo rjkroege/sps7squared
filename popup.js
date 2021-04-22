@@ -85,6 +85,9 @@ window.onload = function () {
         var container = document.getElementsByClassName("notes-container");
         container[0].prepend(clone);
 
+        // Push data to DB
+        saveDataToDB(global.text);
+
         // Takes care of consistency in the plus vs x button for creating/cancelling a note.
 
         if (global.plusNote.classList.contains("bi-x-circle")) {
