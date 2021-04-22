@@ -115,3 +115,21 @@ function displayCurrentURLData() {
     getDataFromDB(url); 
 });
 }
+
+// Push a note to the database.
+function saveDataToDB(noteText){
+  chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+    let url = tabs[0].url;
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // Push data to DB
+        db.collection('notes').add({
+          URL: url,
+          author: user.displayName,
+          text: noteText
+        });
+      } 
+    });
+});
+} 
