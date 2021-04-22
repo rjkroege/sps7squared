@@ -104,3 +104,13 @@ function getDataFromDB(URL){
       })
   })
 }
+
+// Display data from current page
+function displayCurrentURLData() {
+  chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+    let url = tabs[0].url; // This is user's current page URL
+
+    // Get data from DB based on current URL
+    getDataFromDB(url); 
+});
+}
