@@ -16,7 +16,7 @@ window.onload = function () {
 
     var global = new Global();
 
-    /* SIGN IN WITH GOOGLE */
+    /* LOGOUT */
 
     global.logout.onclick = function logout() {
         firebase
@@ -35,7 +35,6 @@ window.onload = function () {
                 console.log(error);
             });
     }
-
 
     /* AFTER SIGN IN */
 
@@ -86,6 +85,7 @@ window.onload = function () {
         container[0].prepend(clone);
 
         // Push data to DB
+
         saveDataToDB(global.text);
 
         // Takes care of consistency in the plus vs x button for creating/cancelling a note.
@@ -95,6 +95,7 @@ window.onload = function () {
             global.plusNote.classList.add("bi-plus-circle");
         }
     };
+
     // Get users profile image URL
     getProfileURL();
     
