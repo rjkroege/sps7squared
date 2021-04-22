@@ -11,8 +11,6 @@ window.onload = function () {
             this.plusNote = document.getElementById("add");
             this.submitNote = document.getElementById("submit");
             this.text = "";
-
-            this.deleteNote = document.querySelector("#deleteNote");
         }
     }
 
