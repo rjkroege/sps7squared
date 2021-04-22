@@ -136,6 +136,6 @@ window.onload = function () {
     // Get users profile image URL
     getProfileURL();
     
-    // Get data from DB based on a URL
-    getDataFromDB("https://medium.com/"); // TODO: Get URL from current open tab
+    // Display data for current page
+    displayCurrentURLData();
 };
