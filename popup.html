@@ -27,6 +27,8 @@
 
     <script>
         firebase.initializeApp(makeFirebaseConfig());
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true});
     </script>
 
 
@@ -63,7 +65,7 @@
     </div>
 
     <!-- Created notes are inserted into this container in a template. -->
-    <div class="notes-container">
+    <div class="notes-container" id="notes-container">
         <!-- Template for each note card to be cloned in popup.js. -->
         <template id="note">
             <div class="note">

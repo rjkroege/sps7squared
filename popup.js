@@ -94,4 +94,7 @@ window.onload = function () {
     };
     // Get users profile image URL
     getProfileURL();
+    
+    // Display data for current page
+    displayCurrentURLData();
 };

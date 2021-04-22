@@ -21,6 +21,8 @@
             "128": "images/icon-128.png"
         }
     },
-
+    "permissions": [
+        "tabs"
+    ],
     "content_security_policy": "script-src 'self' https://cdn.firebase.com​ https://apis.google.com​ https://www.gstatic.com;​ object-src 'self'"
 }

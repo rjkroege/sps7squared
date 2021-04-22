@@ -74,3 +74,44 @@ function getProfileURL() {
     }
   });
 }
+
+// Create a new note and render it
+function renderNote(doc){
+  // Values retrieved from DB
+  let id = doc.id;
+  let noteText = doc.data().text;
+
+  // Create new note 
+  var container = document.getElementsByClassName("notes-container");
+  var temp = document.querySelector("#note");
+  var clone = temp.content.cloneNode(true);
+  var div = clone.querySelector(".text");
+
+  // Modify new note values
+  div.textContent = noteText;
+  temp.setAttribute('data-id', id);
+
+  // Add new note to notes container
+  container[0].prepend(clone);
+}
+
+// Get firebase data based on URL
+function getDataFromDB(URL){
+  db.collection('notes')
+  .where("URL", "==", URL)
+  .get().then((snapshot) => {
+      snapshot.docs.forEach(doc => {
+          renderNote(doc);
+      })
+  })
+}
+
+// Display data from current page
+function displayCurrentURLData() {
+  chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+    let url = tabs[0].url; // This is user's current page URL
+
+    // Get data from DB based on current URL
+    getDataFromDB(url); 
+});
+}
